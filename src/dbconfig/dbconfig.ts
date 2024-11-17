@@ -9,7 +9,7 @@ export async function connect() {
     })
     connction.on('error',()=>{
       console.log('Mongodb Connected error');
-      process.exit;
+      process.exit();
     })
   }catch(err)
   {

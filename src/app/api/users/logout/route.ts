@@ -6,8 +6,8 @@ export async function GET(){
     response.cookies.set("token","",{expires:new Date(0)})
     return response
     
-  } catch (error:any) {
-    return NextResponse.json({error:error.message},{status:400})
+  } catch (error:unknown) {
+    return NextResponse.json({error:"error"},{status:400})
     
   }
 }

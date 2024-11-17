@@ -1,4 +1,11 @@
-export default function Userprofile({params}:any){
+
+interface UserProfileProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function Userprofile({ params }: UserProfileProps){
   return (
     <div className="flex flex-col items-center justify-center">
       <h1>

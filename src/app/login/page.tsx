@@ -24,9 +24,9 @@ export default function SignupPage(){
 
 
     }
-    catch(error:any)
+    catch(error:unknown)
     {
-      console.log("error while login",error.message)
+      console.log("error while login",error)
     }
 
 

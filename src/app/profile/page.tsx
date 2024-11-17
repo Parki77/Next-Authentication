@@ -14,8 +14,8 @@ export default function ProfilePage(){
        route.push("/login")
 
       
-    } catch (error:any) {
-      console.log(error.message)
+    } catch (error:unknown) {
+      console.log(error)
       
     }
   }

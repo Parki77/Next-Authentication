@@ -25,9 +25,9 @@ export default function SignupPage(){
      router.push("/login")
 
     }
-    catch(error:any)
+    catch(error:unknown)
     {
-      console.log(error.message)
+      console.log(error)
        }
 
 
