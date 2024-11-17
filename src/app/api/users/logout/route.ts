@@ -6,8 +6,12 @@ export async function GET(){
     response.cookies.set("token","",{expires:new Date(0)})
     return response
     
-  } catch (error:unknown) {
-    return NextResponse.json({error:"error"},{status:400})
-    
+  } catch (error) {
+    console.error("Error during login:", error);
+
+    return NextResponse.json(
+      { error: "Unexpected error has occurred" },
+      { status: 500 }
+    );
   }
 }

@@ -48,8 +48,12 @@ export async function POST(request: NextRequest){
         
 
 
-    } catch (error:unknown) {
-        return NextResponse.json({error:"erro"},{status:400})
-        
+    } catch (error) {
+        console.error("Error during login:", error);
+    
+        return NextResponse.json(
+          { error: "Unexpected error has occurred" },
+          { status: 500 }
+        );
       }
 }

@@ -8,9 +8,13 @@ export const getDatafromToken=(request:NextRequest)=>{
     const decodedToken=jwt.verify(token,process.env.SECRET_KEY!)as JwtPayload;
     return decodedToken.id
     
-  } catch (error:unknown) {
-    throw new Error("An unknown error occurred during token verification")
-    
+  } catch (error) {
+    console.error("Error during login:", error);
+
+    // return NextResponse.json(
+    //   { error: "Unexpected error has occurred" },
+    //   { status: 500 }
+    // );
   }
 
 }

@@ -13,8 +13,12 @@ export async function GET(request:NextRequest){
      const user= await User.findOne({_id:userId}).select("-password")
      return NextResponse.json({message:"user found",data:user})
     
-  } catch (error:unknown) {
-    return NextResponse.json({error:"erro"},{status:400})
-    
+  } catch (error) {
+    console.error("Error during login:", error);
+
+    return NextResponse.json(
+      { error: "Unexpected error has occurred" },
+      { status: 500 }
+    );
   }
 }
